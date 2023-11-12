@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
   form {
+=======
+form {
+>>>>>>> origin/lesson-4-3
     max-width: 200px;
     margin:0;
   }
@@ -25,4 +29,8 @@
 
   button:hover {
     background-color:blue;
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> origin/lesson-4-3
