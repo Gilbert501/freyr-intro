@@ -1,0 +1,61 @@
+
+
+  body {
+    background-color: aliceblue;
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ * {
+  margin:2px;
+  padding:2px;
+ }h1, h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color:red;
+}
+.experience-list  {
+  background-color: steelblue;
+  border: 1px solid orange; 
+  padding: 10px;
+  margin-bottom: 5px;
+  ; 
+}
+
+.skill-list li  {
+  background-color:grey;
+  border: 1px solid red; 
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+
+  label {
+    font-size: 18px;
+    color:black;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+  font-size:14px;
+  padding:10px;
+  border:1px solid green;
+  margin-bottom:15px;
+}
+
+  button {
+    padding: 6px;
+    background-color:green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color:blue;
+
+  }
+  footer {
+    padding:30px;
+    background-color:wheat;
+  }
