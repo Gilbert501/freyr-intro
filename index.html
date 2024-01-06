@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
-   <title>My First Webpage</title>
+   <title> Gilbert Pascascio - Portfolio</title>
    <meta charset ="UTF-8">
    <link rel="stylesheet" href="index.css">
- 
 </head>
 <body>
+  <header class="navbar">
+    <h1>Gilbert Pascascio</h1>
+    <nav class="menu">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#message">Message</a></li>
+    </ul>
+  </nav>
+</header>
+  
+<section id="about">
+<h2>About</h2>
+</section>
 
-<h1>My Portfolio</h1>
-
-<section>
-<h1>About</h1>
-<h1 >Experience</h1>
-<ul class ="experience-list">
- </ul>
+<section id='experience'>
+  <h2>Experience</h2>
+  <ul class ="experience-list">
+  </ul>
+</section>
 
 <section id = 'skills'>
   <h2>Skills</h2>
-    <ul class = skill-list>
-    </ul>
-
-</section>
-<section>
-
-</section>
-<section id="messages">
-<h2>Messages</h2>
- <ul></ul>
-
-
-  <ul>
-
+  <ul class = "skill-list">
   </ul>
 </section>
-<section>
+
+<section id="message">
 <h2>Leave a Message</h2>
+   <div class ="messages">
   <form  name="leave_message" method="post">
     <label for="name">Name</label>
     <input type="text" id="name" name="usersName" required/>
@@ -43,22 +44,19 @@
     <input 
        type="email" 
        id="email" 
-       name="usersEmail" 
-       required 
-    />
-    <label for="usersMessage">Message</label>
+       name="email" 
+       required />
+  <label for="usersMessage">Message</label>
    <textarea name="usersMessage" id="usersMessage" required></textarea>
    <button type="submit">Submit</button>
  </form>
+   </div>
 </section>
-<section id="messages">
-  <h2>Messages</h2>
-   <ul></ul>
 <footer>
 <section>
-<h1>Connect</h1>
-  <p><strong>Github:</strong> <a href ="github.com/Gilbert501">github.com/Gilbert501</a></p>
-  <p> <strong>Email:</strong> <a href ="mailto:gpas71@hotmail.com">gpas71@hotmail.com</a> </p>
+<h3>Connect</h3>
+  <p><strong>Github:</strong> <a href ="https://github.com/Gilbert501" target="_blank">github.com/Gilbert501</a></p>
+  <p> <strong>Email:</strong> <a href ="mailto:gpas71@hotmail.com">gpas71@hotmail.com</a></p>
   <p><strong>Address:</strong>                
               New York, NY
               10001</p>
