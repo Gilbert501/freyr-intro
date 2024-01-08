@@ -76,7 +76,7 @@ messageForm.addEventListener('submit', function(event){
 
 
   // Select the message section and its list and store it in variables
-    const messageSection = document.querySelector('#messages');
+    const messageSection = document.querySelector('#message');
     const messageList = messageSection.querySelector('ul');
 
     // Create a new list item
@@ -90,10 +90,10 @@ messageForm.addEventListener('submit', function(event){
        // Create and append the remove button
      const removeButton = document.createElement('button');
         removeButton.innerText = 'remove';
-     messageForm.addEventListener('submit', function(){
+     
         removeButton.addEventListener('click', function() {
                    const entry = removeButton.parentNode;
-                   removeButton.innerText= "remove";
+                   entry.remove();
 });
 // append removeButton to newMessage
 newMessage.appendChild(removeButton);
@@ -101,12 +101,29 @@ messageList.appendChild(newMessage);
 
 // Reset the form after submission
 messageForm.reset();
-
 }); 
 
-messageForm.requestFullscreen();
+ /*Create a new XMLHttpRequest object to make an HTTP request
+ Set up the request with the method 'GET' and the GitHub API URL for fetching user repositories
+ Send the HTTP request to the GitHub API*/
+ var githubRequest = new XMLHttpRequest();
+githubRequest.open('GET','https://api.github.com/users/Gilbert501/repos');
+githubRequest.send();
 
-
-}); 
- 
- 
+/*Define a callback function to be executed when the request completes successfully
+Parse the response */
+githubRequest.onload = function() {
+ var repositories = JSON.parse(githubRequest.response);
+  
+//DOM selection for project section and unordered list and store then in separate variables
+var projectSection = document.getElementById('projects');
+var projectList = projectSection.querySelector('ul')
+//Iterate over the repos, create a new list item and atore in a variable
+for (var i=0; i < repositories.length; i++) {
+var project = document.createElement('li');
+// Set the inner text of the list item to current repo's name.
+project.innerText = repositories[i].name;
+//Append the list item to unordered list
+projectList.appendChild(project);
+}
+}
