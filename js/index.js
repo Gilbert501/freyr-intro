@@ -2,7 +2,7 @@ let today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
-copyright.innerHTML = 'Copyright' +' &copy; ' +thisYear+ ' Gilbert Pascascio' ;
+copyright.innerText = 'Copyright' +' &copy; ' +thisYear+ ' Gilbert Pascascio' ;
 // Append copyright paragraph <p> to footer
 footer.appendChild(copyright);
 
@@ -14,7 +14,7 @@ function addTextToAboutSection() {
   let newParagraph = document.createElement("p");
 
   // Set the text content for the new paragraph
-  newParagraph.textContent = "I am currently enrolled at Code The Dream School.";
+  newParagraph.textContent = "Hello! I'm Gilbert and I live in New York, I'm currently enrolled at Code the Dream School, immersing myself in the world of programming and web development. I'm eager to master the languages that drive digital innovation. Coming from a law enforcement background, I find the field of cybersecurity particularly interesting. I am excited about the prospect of contributing my skills to the tech industry. Let's code the future together!";
 
   // Append the new paragraph to the "About" section
   aboutSection.appendChild(newParagraph);
@@ -27,7 +27,7 @@ window.onload = function() {
 
 
 // Define an array of experience
-let experience = ['Item 1', 'Item 2', 'Item 3'];
+let experience = ["While I have no formal experience in web development, I am eager to apply the skills and knowledge gained through coursework. I have dedicated time to my personal project, which was creating a responsive webpage and experimenting with various front-end technologies. These hands-on experiences have allowed me to develop a solid foundation in HTML, CSS, and JavaScript, and I am enthusiastic about contributing my skills to dynamic and collaborative teams."];
 const experienceSection = document.querySelector('#experience');
 const experienceList = experienceSection.querySelector('ul');
 
@@ -37,7 +37,7 @@ Set the text content of the list item to the current experience
 */
 for (let i = 0; i < experience.length; i++){
 let experiences = document.createElement('li');
-experiences.innerHTML = experience[i];
+experiences.innerText = experience[i];
 
   // Append experiences to the experiencelist
   experienceList.appendChild(experiences);
@@ -55,7 +55,7 @@ Set the text content of the list item to the current skill
 */
 for (let i = 0; i < skills.length; i++){
 let skill = document.createElement('li');
-skill.innerHTML = skills[i];
+skill.innerText = skills[i];
 
   // Append skill to the skillslist
   skillsList.appendChild(skill);
@@ -77,7 +77,7 @@ messageForm.addEventListener('submit', function(event){
 
   // Select the message section and its list and store it in variables
     const messageSection = document.querySelector('#message');
-    const messageList = messageSection.querySelector('ul');
+    const messageList = messageSection.querySelector('.message-list');
 
     // Create a new list item
     const newMessage = document.createElement('li');
@@ -103,27 +103,5 @@ messageList.appendChild(newMessage);
 messageForm.reset();
 }); 
 
- /*Create a new XMLHttpRequest object to make an HTTP request
- Set up the request with the method 'GET' and the GitHub API URL for fetching user repositories
- Send the HTTP request to the GitHub API*/
- var githubRequest = new XMLHttpRequest();
-githubRequest.open('GET','https://api.github.com/users/Gilbert501/repos');
-githubRequest.send();
 
-/*Define a callback function to be executed when the request completes successfully
-Parse the response */
-githubRequest.onload = function() {
- var repositories = JSON.parse(githubRequest.response);
-  
-//DOM selection for project section and unordered list and store then in separate variables
-var projectSection = document.getElementById('projects');
-var projectList = projectSection.querySelector('ul')
-//Iterate over the repos, create a new list item and atore in a variable
-for (var i=0; i < repositories.length; i++) {
-var project = document.createElement('li');
-// Set the inner text of the list item to current repo's name.
-project.innerText = repositories[i].name;
-//Append the list item to unordered list
-projectList.appendChild(project);
-}
-}
+ 
