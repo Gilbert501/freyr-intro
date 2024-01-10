@@ -53,8 +53,10 @@ font-weight: bold;
 
 }
 .experience-list li {
-  background-color:steelblue;
+  display: inline-block;
+  background-color: steelblue;
   padding: 10px;
+  
 }
 
 .skill-list{
@@ -64,13 +66,19 @@ font-weight: bold;
   justify-content: space-between;
 }
 .skill-list li {
+  display:inline-block;
   background-color:steelblue;
+  border-radius: 10px;
+  border: solid 2px white;
   padding: 10px;
+}
+.project-links {
+  color: white;
 }
  .message form{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items:left;
 }
 .message label,
 .message textarea,
@@ -92,13 +100,12 @@ font-weight: bold;
 .label {
 font-size: 18px;
 margin-bottom: 8px;
-
 }
+
 input[type="text"],
 input[type="email"], textarea { 
 font-size:14px;
 padding:10px;
-border:2px solid green;
 margin-bottom:15px;
 }
 
