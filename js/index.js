@@ -2,7 +2,7 @@ let today = new Date();
 const thisYear = today.getFullYear();
 const footer = document.querySelector('footer');
 const copyright = document.createElement('p');
-copyright.innerText = 'Copyright' +' &copy; ' +thisYear+ ' Gilbert Pascascio' ;
+copyright.innerHTML= 'Copyright' +' &copy; ' +thisYear+ ' Gilbert Pascascio' ;
 // Append copyright paragraph <p> to footer
 footer.appendChild(copyright);
 
@@ -103,5 +103,31 @@ messageList.appendChild(newMessage);
 messageForm.reset();
 }); 
 
-
+/* Make a GET request using the fetch API
+- DOM selection for project section and unordered list and store then in separate variables
+- Iterate over the repos, create a new list item and atore in a variable
+- Set the inner text of the list item to current repo's name.
+- Set the inner HTML to the current repo's name */
+fetch('https://api.github.com/users/Gilbert501/repos')
+.then(response => {
+  if(!response.ok){
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+    return response.json();
+}) 
+.then(repositories => {
+  const projectSection = document.getElementById('projects');
+  const projectList = projectSection.querySelector('ul')
+  for (let i=0; i < repositories.length; i++) {
+    const project = document.createElement('li');
+    if (repositories[i].name.includes('intro')){
+       project.innerHTML = `<a class="project-links" href ="${repositories[i].html_url}"> ${repositories[i].name}</a>`
+    //Append the project to project list
+    projectList.appendChild(project);
+  }
+}
+})
+.catch(error => {
+  console.error("Error fetching repo:", error);
+});
  
