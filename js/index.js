@@ -60,7 +60,8 @@ skill.innerText = skills[i];
   // Append skill to the skillslist
   skillsList.appendChild(skill);
 }  
-
+const messageSection = document.getElementById('messages');
+messageSection.style.display = 'none';
 let messageForm = document.querySelector('form[name="leave_message"]');
  /*Prevent the default for submission behavior
 Create three variable for form fields and retrieve the value
@@ -73,30 +74,39 @@ messageForm.addEventListener('submit', function(event){
     console.log('Name', usersName);
     console.log('Email', email);
     console.log('Message', message);
-
-
-  // Select the message section and its list and store it in variables
-    const messageSection = document.querySelector('#message');
+    
+// Select the message section and its list and store it in variables
+   
+    messageSection.style.display = 'block';
     const messageList = messageSection.querySelector('.message-list');
 
-    // Create a new list item
+// Create a new list item
     const newMessage = document.createElement('li');
-    // Set the innerHtml of newMessage to display usersName, usersMessage and an email link
+ // Set the innerHtml of newMessage to display usersName, usersMessage and an email link
     newMessage.innerHTML = '<a href="mailto:userEmail@example.com"> '+
         event.target.usersName.value + '</a>' + 
         '<br>' +
         '<span>' + event.target.usersMessage.value + '</span>' + '<br>';
 
-       // Create and append the remove button
+// Create and append the remove button
      const removeButton = document.createElement('button');
         removeButton.innerText = 'remove';
      
         removeButton.addEventListener('click', function() {
-                   const entry = removeButton.parentNode;
+                   const entry = removeButton.parentNode; 
                    entry.remove();
-});
-// append removeButton to newMessage
+
+// Check if there are no more messages in the messageList
+       if (messageList.children.length === 0) {
+// Remove the "Messages" heading
+       messageSection.style.display = 'none';
+}
+ });
+
+ // append removeButton to newMessage
 newMessage.appendChild(removeButton);
+
+// Append newMessage to messageList
 messageList.appendChild(newMessage);
 
 // Reset the form after submission
